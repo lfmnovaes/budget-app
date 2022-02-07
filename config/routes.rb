@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :group_investments
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :investments
   resources :groups
+  resources :group_investments
 
   root to: 'groups#index'
 end
