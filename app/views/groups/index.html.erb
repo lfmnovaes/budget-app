@@ -6,9 +6,10 @@
   <% @groups.each do |group| %>
     <%= render group %>
     <p>
-      <%= link_to "Show this group", group %>
+      <%= button_to "Show the investments", group_investments_path(group), method: :get %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New group", new_group_path %>
+<div>
+  <%= button_to "New group", new_group_path, method: :get %>
+</div>

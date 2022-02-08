@@ -1,5 +1,4 @@
 class Investment < ApplicationRecord
   belongs_to :user
-  has_many :group_investments
-  has_many :groups, through: :group_investments
+  has_and_belongs_to_many :groups
 end

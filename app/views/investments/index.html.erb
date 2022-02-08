@@ -5,10 +5,11 @@
 <div id="investments">
   <% @investments.each do |investment| %>
     <%= render investment %>
-    <p>
-      <%= link_to "Show this investment", investment %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New investment", new_investment_path %>
+<div>
+  <%= button_to "New investment", new_group_investment_path, method: :get %>
+</div>
+<div>
+  <%= button_to "Back to groups", groups_path, method: :get %>
+</div>

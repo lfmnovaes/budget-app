@@ -20,17 +20,13 @@ class InvestmentsController < ApplicationController
 
   # POST /investments or /investments.json
   def create
-    @investment = Investment.new(investment_params)
-
-    respond_to do |format|
-      if @investment.save
-        format.html { redirect_to investment_url(@investment), notice: 'Investment was successfully created.' }
-        format.json { render :show, status: :created, location: @investment }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @investment.errors, status: :unprocessable_entity }
+    params[:investment][:group_id].each do |g|
+      if !g.empty?
+        @investment = Investment.new(investment_params.merge(user_id: current_user.id, group_id: g))
+        @investment.save
       end
     end
+    redirect_to investments_path
   end
 
   # PATCH/PUT /investments/1 or /investments/1.json

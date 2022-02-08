@@ -3,8 +3,8 @@
 <%= render @investment %>
 
 <div>
-  <%= link_to "Edit this investment", edit_investment_path(@investment) %> |
-  <%= link_to "Back to investments", investments_path %>
-
+  <%= button_to "Back to investments", investments_path, method: :get %>
+</div>
+<div>
   <%= button_to "Destroy this investment", @investment, method: :delete %>
 </div>
