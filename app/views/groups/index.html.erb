@@ -6,10 +6,10 @@
   <% @groups.each do |group| %>
     <%= render group %>
     <p>
-      <%= button_to "Show the investments", group_investments_path(group), method: :get %>
+      <%= button_to "Show the investments", group_investments_path(group), {method: :get, class: "button is-link"} %>
     </p>
   <% end %>
 </div>
 <div>
-  <%= button_to "New group", new_group_path, method: :get %>
+  <%= button_to "New group", new_group_path, {method: :get, class: "button is-primary"} %>
 </div>

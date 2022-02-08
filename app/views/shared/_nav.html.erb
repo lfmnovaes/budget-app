@@ -1,0 +1,31 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbat-item">
+      Budget App
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <%= link_to "Groups", groups_path, {class: "navbar-item"} %>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <% if user_signed_in? %>
+            <strong>
+              <%= current_user.name %>
+            </strong>
+            <%= button_to 'Logout', destroy_user_session_path, {method: :delete, class: "button is-danger"} %>
+          <% else %>
+            <%= button_to 'Sign up', new_user_registration_path, {method: :get, class: "button is-primary"} %>
+            <%= button_to 'Log in', new_user_session_path, {method: :get, class: "button is-light"} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
