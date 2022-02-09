@@ -8,21 +8,23 @@
     </a>
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
+    <div class="navbar-start title pt-2">
       <%= link_to "Groups", groups_path, {class: "navbar-item"} %>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
+        <div class="columns">
           <% if user_signed_in? %>
-            <strong>
-              <%= current_user.name %>
-            </strong>
-            <%= button_to 'Logout', destroy_user_session_path, {method: :delete, class: "button is-danger"} %>
+            <div class="column">
+              <h2 class="title">
+                <%= current_user.name %>
+              </h2>
+            </div>
+            <%= button_to 'Logout', destroy_user_session_path, {method: :delete, class: "button is-danger is-large"} %>
           <% else %>
-            <%= button_to 'Sign up', new_user_registration_path, {method: :get, class: "button is-primary"} %>
-            <%= button_to 'Log in', new_user_session_path, {method: :get, class: "button is-light"} %>
+            <%= button_to 'Sign up', new_user_registration_path, {method: :get, class: "button is-primary is-large"} %>
+            <%= button_to 'Log in', new_user_session_path, {method: :get, class: "button is-light is-large"} %>
           <% end %>
         </div>
       </div>
