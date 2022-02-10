@@ -2,10 +2,9 @@
 
 <div id="groups">
   <% @groups.each do |group| %>
-    <div class="box">
+    <%= link_to group_investments_path(group), method: :get, class: "box" do %>
       <%= render group %>
-      <%= button_to "Show the investments", group_investments_path(group), {method: :get, class: "button is-link is-medium"} %>
-    </div>
+    <% end %>
   <% end %>
 </div>
 <br>

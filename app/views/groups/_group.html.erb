@@ -12,6 +12,6 @@
     </div>
   </div>
   <div class="subtitle is-3">
-    Total of investments: $ <%= (group.investments.collect { |i| i.amount }).sum.round(2) %>
+    Invested: $ <%= (group.investments.collect { |i| i.amount }).sum.round(2) %>
   </div>
 </article>
