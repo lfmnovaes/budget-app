@@ -1,15 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Groups</h1>
-
 <div id="groups">
   <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= button_to "Show the investments", group_investments_path(group), {method: :get, class: "button is-link"} %>
-    </p>
+    <div class="box">
+      <%= render group %>
+      <%= button_to "Show the investments", group_investments_path(group), {method: :get, class: "button is-link is-medium"} %>
+    </div>
   <% end %>
 </div>
+<br>
 <div>
-  <%= button_to "New group", new_group_path, {method: :get, class: "button is-primary"} %>
+  <%= button_to "New group", new_group_path, {method: :get, class: "button is-primary is-large"} %>
 </div>

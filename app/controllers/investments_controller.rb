@@ -4,7 +4,8 @@ class InvestmentsController < ApplicationController
 
   # GET /investments or /investments.json
   def index
-    @investments = Investment.all
+    @investments = Investment.where(group_id: params[:group_id])
+    @group_name = Group.find(params[:group_id])
   end
 
   # GET /investments/1 or /investments/1.json
@@ -26,7 +27,7 @@ class InvestmentsController < ApplicationController
         @investment.save
       end
     end
-    redirect_to investments_path
+    redirect_to group_investments_path
   end
 
   # PATCH/PUT /investments/1 or /investments/1.json
@@ -47,7 +48,7 @@ class InvestmentsController < ApplicationController
     @investment.destroy
 
     respond_to do |format|
-      format.html { redirect_to investments_url, notice: 'Investment was successfully destroyed.' }
+      format.html { redirect_to group_investments_url, notice: 'Investment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
