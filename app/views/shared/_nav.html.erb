@@ -1,0 +1,48 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <% if current_page?(groups_path) %>
+      <svg style="width:64px;height:64px" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22L12 3Z" />
+      </svg>
+    <% else %>
+      <%= link_to groups_path do %>
+        <svg style="width:64px;height:64px" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+        </svg>
+      <% end %>
+    <% end %>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start title">
+      <%= link_to "Groups", groups_path, {class: "navbar-item"} %>
+      <a class="navbar-item">Budget</a>
+      <a class="navbar-item">Income</a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <% if user_signed_in? %>
+            <p class="control">
+              <h2 class="title">
+                <%= current_user.name %>
+              </h2>
+            </p>
+            <p class="control">
+              <%= button_to 'Logout', destroy_user_session_path, {method: :delete, class: "button is-danger is-large"} %>
+            </p>
+          <% else %>
+            <p class="control">
+              <%= button_to 'Sign up', new_user_registration_path, {method: :get, class: "button is-primary is-large"} %>
+            </p>
+            <p class="control">
+              <%= button_to 'Log in', new_user_session_path, {method: :get, class: "button is-light is-large"} %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

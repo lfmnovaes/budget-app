@@ -1,9 +1,5 @@
-<h1>New investment</h1>
-
 <%= render "form", investment: @investment %>
-
 <br>
-
 <div>
-  <%= link_to "Back to investments", investments_path %>
+  <%= button_to "Back to investments", group_investments_path(params['group_id']), method: :get, class: "button is-light is-large is-fullwidth" %>
 </div>
