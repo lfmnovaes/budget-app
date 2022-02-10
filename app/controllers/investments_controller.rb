@@ -22,7 +22,7 @@ class InvestmentsController < ApplicationController
   # POST /investments or /investments.json
   def create
     params[:investment][:group_id].each do |g|
-      if !g.empty?
+      unless g.empty?
         @investment = Investment.new(investment_params.merge(user_id: current_user.id, group_id: g))
         @investment.save
       end
