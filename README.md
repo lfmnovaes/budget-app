@@ -10,6 +10,10 @@ Rails >= 7.0.0
 
 Postgresql >= 12.0
 
+## Live server
+
+[Heroku](https://stormy-sands-25406.herokuapp.com/)
+
 ## Getting Started
 
 - To get a local copy of the repository please run the following commands on your terminal:
