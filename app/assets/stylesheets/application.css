@@ -15,7 +15,17 @@
  */
 
 :root {
-  --green: #60b625;
+  --second: #5fb523;
+  --main: #3878c2;
+  --text: #434b54;
+}
+
+* {
+  color: var(--text);
+}
+
+.nav-bg-color {
+  background-color: var(--main) !important;
 }
 
 .gray {
@@ -24,10 +34,14 @@
 
 .bottom {
   padding: 10px !important;
-  background-color: var(--green) !important;
+  background-color: var(--second) !important;
 }
 
 .bottom-btn {
   background-color: transparent !important;
   color: white !important;
+}
+
+.hide-border {
+  border: 0 !important;
 }
