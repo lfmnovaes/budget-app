@@ -14,7 +14,6 @@
     </div>
   <% end %>
 </div>
-<br>
-<div>
-  <%= button_to "New investment", new_group_investment_path, {method: :get, class: "button is-primary is-large"} %>
+<div class="navbar is-fixed-bottom bottom">
+  <%= link_to "New Investment", new_group_investment_path, {method: :get, class: "button is-large is-outlined is-fullwidth bottom-btn"} %>
 </div>

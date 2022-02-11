@@ -10,14 +10,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <%= javascript_importmap_tags %>
   </head>
-  <header>
+  <body class="has-navbar-fixed-top has-navbar-fixed-bottom">
     <%= render "shared/nav" %>
-  </header>
-  <body>
-    <div class="content">
-      <p class="alert"><%= alert %></p>
-    </div>
+    <br><br><br>
     <div class="has-background-color container is-max-widescreen">
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>

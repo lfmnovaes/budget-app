@@ -6,12 +6,12 @@
   </div>
   <div class="media-content">
     <div class="content">
-      <p>
-        <strong class="subtitle is-2"><%= group.name %></strong>
-      </p>
+      <h2 class="subtitle is-3">
+        <%= group.name %>
+      </h2>
     </div>
   </div>
-  <div class="subtitle is-3">
-    Total of investments: $ <%= (group.investments.collect { |i| i.amount }).sum.round(2) %>
+  <div class="subtitle is-4">
+    Invested: $ <%= (group.investments.collect { |i| i.amount }).sum.round(2) %>
   </div>
 </article>

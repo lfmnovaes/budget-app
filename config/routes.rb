@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :investments, only: [:index, :new, :create, :destroy]
   end
 
-  root to: 'groups#index'
+  root to: 'splash#index'
 end
