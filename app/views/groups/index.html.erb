@@ -7,7 +7,6 @@
     <% end %>
   <% end %>
 </div>
-<br>
-<div>
-  <%= button_to "New group", new_group_path, {method: :get, class: "button is-success is-large is-fullwidth"} %>
+<div class="navbar is-fixed-bottom bottom">
+  <%= link_to "New Group", new_group_path, {method: :get, class: "button is-large is-outlined is-fullwidth bottom-btn"} %>
 </div>
