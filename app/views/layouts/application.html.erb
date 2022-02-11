@@ -12,11 +12,9 @@
   </head>
   <body class="has-navbar-fixed-top has-navbar-fixed-bottom">
     <%= render "shared/nav" %>
-    <br>
-    <div class="content">
-      <p class="alert"><%= alert %></p>
-    </div>
+    <br><br><br>
     <div class="has-background-color container is-max-widescreen">
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>

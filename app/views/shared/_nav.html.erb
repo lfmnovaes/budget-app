@@ -49,10 +49,10 @@
             </p>
           <% else %>
             <p class="control">
-              <%= button_to 'Sign up', new_user_registration_path, {method: :get, class: "button is-large is-primary"} %>
+              <%= button_to 'Log in', new_user_session_path, {method: :get, class: "button is-large is-info"} %>
             </p>
             <p class="control">
-              <%= button_to 'Log in', new_user_session_path, {method: :get, class: "button is-large is-info"} %>
+              <%= button_to 'Sign up', new_user_registration_path, {method: :get, class: "button is-large is-primary"} %>
             </p>
           <% end %>
         </div>
