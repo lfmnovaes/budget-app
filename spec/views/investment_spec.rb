@@ -5,7 +5,7 @@ RSpec.describe 'Investment index page', type: :system do
     before(:example) do
       @user = User.new(name: 'John', email: 'john@mail.com', password: 'qwe123')
       @user.save
-      @ms = @user.groups.create(name: "Microsoft", icon: "https://cdn.worldvectorlogo.com/logos/microsoft.svg")
+      @ms = @user.groups.create(name: 'Microsoft', icon: 'https://cdn.worldvectorlogo.com/logos/microsoft.svg')
       @ms.save
       visit new_user_session_path
       sleep(2)
@@ -32,7 +32,7 @@ RSpec.describe 'Investment index page', type: :system do
       expect(page).to have_content('Investments on Microsoft')
     end
     it 'can add multiple investments' do
-      @apple = @user.groups.create(name: "Apple", icon: "https://cdn.worldvectorlogo.com/logos/apple-11.svg")
+      @apple = @user.groups.create(name: 'Apple', icon: 'https://cdn.worldvectorlogo.com/logos/apple-11.svg')
       @apple.save
       click_link('New Investment', match: :first)
       sleep(1)
